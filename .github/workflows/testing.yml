@@ -15,5 +15,5 @@ jobs:
         with:
           fetch-depth: 2
       - name: Get changes
-        run: git diff --name-only HEAD^1 HEAD
-      - run: echo "GRH"
+        run: CHANGED_FILE=$(git diff --name-only HEAD^1 HEAD)
+      - run: echo "$CHANGED_FILES"
