@@ -16,3 +16,6 @@ source = "versioningit"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
+
+[tool.versioningit.write]
+file = "src/VERSION"
