@@ -16,3 +16,4 @@ jobs:
           fetch-depth: 2
       - name: Get changes
         run: git diff --name-only HEAD^1 HEAD
+      - run: echo "GRH"
