@@ -15,6 +15,6 @@ jobs:
           fetch-depth: 2
       - name: Get changes
         run: |
-          export CHANGED_FILES="$(git diff --name-only HEAD^1 HEAD|tr -d '\n')"
+          export CHANGED_FILES="$(git diff --name-only HEAD^1 HEAD|tr '\n' ' ')"
           echo "${CHANGED_FILES}"
           bash ./ci/build.sh "${CHANGED_FILES}"
