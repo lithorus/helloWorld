@@ -1,7 +1,7 @@
 name: Testing
 
 on:
-  push:
+  #push:
   pull_request:
     branches: [ main ]
 
@@ -17,4 +17,4 @@ jobs:
         run: |
           export CHANGED_FILES="$(git diff --name-only HEAD^1 HEAD)"
           echo "${CHANGED_FILES}"
-          bash ./ci/build.sh
+          bash ./ci/build.sh "${CHANGED_FILES}"
