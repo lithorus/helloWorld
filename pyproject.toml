@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [tool.hatch.version]
-source = "versioningit"
+path = "src/_version.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
