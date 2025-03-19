@@ -10,7 +10,5 @@ python3 -m virtualenv venv
 source venv/bin/activate
 pip3 install build
 
-VERSION=$(git describe --tags --abbrev=1)
-hatch version "${VERSION}"
-#git tag 0.0.0
+hatch version "$(git describe --tags --abbrev=1 | sed 's/-/+/')"
 python3 -m build
