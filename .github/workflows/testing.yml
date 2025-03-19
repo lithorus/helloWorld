@@ -17,3 +17,4 @@ jobs:
         run: |
           readarray -t changed_files < <(git diff --name-only HEAD^1 HEAD)
           bash ./ci/build.sh "${changed_files[@]}"
+
