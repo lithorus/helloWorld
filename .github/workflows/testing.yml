@@ -1,10 +1,9 @@
 name: Testing
 
 on:
-  push:
-    branches: [ master ]
+  #push:
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   check_changed_files:
@@ -13,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - name: Get changes
-        run: git diff --name-only HEAD^1 HEAD
+        run: |
+          export
+          readarray -t changed_files < <(git diff --name-only HEAD^1 HEAD)
+          bash ./ci/build.sh "${changed_files[@]}"
