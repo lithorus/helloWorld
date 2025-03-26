@@ -1,7 +1,7 @@
 [build-system]
 requires = [
     "hatchling",
-    "versioningit",
+    "hatch-vcs",
 ]
 build-backend = "hatchling.build"
 
@@ -12,10 +12,11 @@ dependencies = [
 ]
 
 [tool.hatch.version]
-path = "src/_version.py"
+source = "vcs"
+#path = "src/_version.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
 
-[tool.versioningit.write]
-file = "src/VERSION"
+#[tool.versioningit.write]
+#file = "src/VERSION"
